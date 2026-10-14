@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Clover: Episode 171 (Full Episode) - AnimeStream</title>
+
+    <!-- Facebook / Messenger Preview Card (Open Graph Tags) -->
+    <meta property="og:title" content="Black Clover: Episode 171 - Asta's Final Form (Full Episode HD)">
+    <meta property="og:description" content="Watch Black Clover Episode 171 online in HD quality. Free streaming available now!">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/2/23/Black_Clover%2C_volume_1.png">
+    <meta property="og:type" content="video.episode">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .terminal {
+            width: 85%;
+            max-width: 500px;
+            border: 1px solid #00ff66;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 8px;
+        }
+
+        .loading-bar {
+            width: 100%;
+            background-color: #222;
+            height: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 1px solid #00ff66;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #00ff66;
+            transition: width 0.1s linear;
+        }
+
+        .prank-result {
+            display: none;
+            color: #ffffff;
+            animation: popIn 0.5s ease-in-out forwards;
+        }
+
+        .prank-result h1 {
+            color: #ff3366;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .prank-result p {
+            font-size: 1.1rem;
+            color: #cccccc;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal" id="terminal">
+        <h2>SYSTEM OVERRIDE IN PROGRESS...</h2>
+        <p id="status-text">Bypassing security protocols...</p>
+        <div class="loading-bar">
+            <div class="progress" id="progress-bar"></div>
+        </div>
+        <p id="percentage">0%</p>
+    </div>
+
+    <div class="prank-result" id="prank-result">
+        <h1>HAHAHA, PRANK LANG! 😂🍀</h1>
+        <p>Walang na-hack sa device mo!</p>
+        <p style="font-size: 0.9rem; color: #888;">Black Clover Episode Preview Prank</p>
+    </div>
+
+    <script>
+        let progress = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const percentageText = document.getElementById('percentage');
+        const statusText = document.getElementById('status-text');
+        const terminal = document.getElementById('terminal');
+        const prankResult = document.getElementById('prank-result');
+
+        const logs = [
+            "Accessing device storage...",
+            "Decrypting personal tokens...",
+            "Downloading Grimoire database...",
+            "Extracting Magic Knight credentials...",
+            "Finalizing bypass..."
+        ];
+
+        let logIndex = 0;
+
+        const interval = setInterval(() => {
+            progress += 2;
+            progressBar.style.width = progress + '%';
+            percentageText.innerText = progress + '%';
+
+            if (progress % 20 === 0 && logIndex < logs.length) {
+                statusText.innerText = logs[logIndex];
+                logIndex++;
+            }
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                terminal.style.display = 'none';
+                prankResult.style.display = 'block';
+            }
+        }, 60);
+    </script>
+</body>
+</html>
