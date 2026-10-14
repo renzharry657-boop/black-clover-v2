@@ -1,133 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Clover: Episode 171 (Full Episode) - AnimeStream</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Messenger OpenGraph Link Preview -->
+  <meta property="og:title" content="Black Clover: Sword of the Wizard King - Episode 171 [ENG SUB] 1080p">
+  <meta property="og:description" content="Watch Black Clover Episode 171 online in HD quality. Free streaming without ads!">
+  <meta property="og:image" content="https://img.youtube.com/vi/a7Ex_2c_R1w/maxresdefault.jpg">
+  <meta property="og:type" content="video.other">
+  
+  <title>Black Clover - Episode 171 Streaming</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0d0202;
+      color: #ff2a2a;
+      font-family: 'Courier New', Courier, monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: hidden;
+      user-select: none;
+    }
 
-    <!-- Facebook / Messenger Preview Card (Open Graph Tags) -->
-    <meta property="og:title" content="Black Clover: Episode 171 - Asta's Final Form (Full Episode HD)">
-    <meta property="og:description" content="Watch Black Clover Episode 171 online in HD quality. Free streaming available now!">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/2/23/Black_Clover%2C_volume_1.png">
-    <meta property="og:type" content="video.episode">
+    .warning-box {
+      border: 3px solid #ff0000;
+      background: rgba(20, 0, 0, 0.95);
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 30px #ff0000;
+      animation: pulse 1s infinite alternate;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0d1117;
-            color: #00ff66;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            overflow: hidden;
-        }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #ff0000; border-color: #ff0000; }
+      100% { box-shadow: 0 0 40px #ff0000, inset 0 0 15px #ff0000; border-color: #ff5555; }
+    }
 
-        .terminal {
-            width: 85%;
-            max-width: 500px;
-            border: 1px solid #00ff66;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 8px;
-        }
+    .skull-icon {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
 
-        .loading-bar {
-            width: 100%;
-            background-color: #222;
-            height: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            overflow: hidden;
-            border: 1px solid #00ff66;
-        }
+    h1 {
+      font-size: 24px;
+      color: #ff0000;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff0000;
+    }
 
-        .progress {
-            width: 0%;
-            height: 100%;
-            background-color: #00ff66;
-            transition: width 0.1s linear;
-        }
+    .info-list {
+      text-align: left;
+      font-size: 13px;
+      color: #ff8888;
+      background: #1a0303;
+      padding: 12px;
+      border-radius: 6px;
+      margin: 15px 0;
+      border: 1px solid #4a0000;
+      line-height: 1.6;
+    }
 
-        .prank-result {
-            display: none;
-            color: #ffffff;
-            animation: popIn 0.5s ease-in-out forwards;
-        }
+    .progress-container {
+      width: 100%;
+      background-color: #330000;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0 10px 0;
+      border: 1px solid #ff0000;
+    }
 
-        .prank-result h1 {
-            color: #ff3366;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+    .progress-bar {
+      width: 0%;
+      height: 22px;
+      background: linear-gradient(90deg, #880000, #ff0000);
+      transition: width 0.4s ease;
+    }
 
-        .prank-result p {
-            font-size: 1.1rem;
-            color: #cccccc;
-        }
+    .status-text {
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: bold;
+    }
 
-        @keyframes popIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-    </style>
+    /* Prank Reveal Screen */
+    #prank-screen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #0a0a0a;
+      color: #00ff66;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .reveal-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff0000;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff0000;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="terminal" id="terminal">
-        <h2>SYSTEM OVERRIDE IN PROGRESS...</h2>
-        <p id="status-text">Bypassing security protocols...</p>
-        <div class="loading-bar">
-            <div class="progress" id="progress-bar"></div>
-        </div>
-        <p id="percentage">0%</p>
+  <!-- Nakakatakot na Hack Warning Screen -->
+  <div class="warning-box" id="hack-screen">
+    <div class="skull-icon">⚠️ ☠️ ⚠️</div>
+    <h1>CRITICAL SECURITY ALERT</h1>
+    <p style="color: #fff; font-size: 14px;">YOUR DEVICE HAS BEEN COMPROMISED!</p>
+    
+    <div class="info-list">
+      <div><b>STATUS:</b> EXFILTRATING PRIVATE DATA...</div>
+      <div><b>TARGET:</b> <span id="user-agent">Mobile Device</span></div>
+      <div><b>IP LOCATION:</b> TRACKED (Calabarzon, PH)</div>
+      <div><b>ACTION:</b> FORMATTING SYSTEM STORAGE</div>
     </div>
 
-    <div class="prank-result" id="prank-result">
-        <h1>HAHAHA, PRANK LANG! 😂🍀</h1>
-        <p>Walang na-hack sa device mo!</p>
-        <p style="font-size: 0.9rem; color: #888;">Black Clover Episode Preview Prank</p>
+    <div class="status-text" id="status-desc">Encrypting Photos & Messages (12%)...</div>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="p-bar"></div>
     </div>
 
-    <script>
-        let progress = 0;
-        const progressBar = document.getElementById('progress-bar');
-        const percentageText = document.getElementById('percentage');
-        const statusText = document.getElementById('status-text');
-        const terminal = document.getElementById('terminal');
-        const prankResult = document.getElementById('prank-result');
+    <p style="font-size: 11px; color: #888; margin-top: 10px;">DO NOT CLOSE THIS TAB OR PHONE WILL BE HARD-LOCKED.</p>
+    <button class="reveal-btn" onclick="triggerAlert()">CANCEL PROCESS</button>
+  </div>
 
-        const logs = [
-            "Accessing device storage...",
-            "Decrypting personal tokens...",
-            "Downloading Grimoire database...",
-            "Extracting Magic Knight credentials...",
-            "Finalizing bypass..."
-        ];
+  <!-- Prank Reveal Screen (Lalabas lang pagkatapos ng matagal na kaba) -->
+  <div id="prank-screen">
+    <h1 style="font-size: 45px; color: #00ff66; text-shadow: 0 0 20px #00ff66;">🍀 HAHAHA! PRANK LANG! 🍀</h1>
+    <p style="font-size: 18px; color: #ffffff; margin-top: 15px;">
+      Chill ka lang tropa! Ligtas ang phone mo at walang na-hack. 😂
+    </p>
+    <p style="font-size: 14px; color: #888; margin-top: 25px;">
+      Walang Black Clover Episode 171, na-tripan ka lang ni Renz! 😜
+    </p>
+  </div>
 
-        let logIndex = 0;
+  <script>
+    // Vibration effect kapag supported ng phone
+    if ("vibrate" in navigator) {
+      navigator.vibrate([300, 100, 300, 100, 500]);
+    }
 
-        const interval = setInterval(() => {
-            progress += 2;
-            progressBar.style.width = progress + '%';
-            percentageText.innerText = progress + '%';
+    // Detect Browser Info
+    document.getElementById('user-agent').innerText = navigator.userAgent.split(' ')[0] + " Device";
 
-            if (progress % 20 === 0 && logIndex < logs.length) {
-                statusText.innerText = logs[logIndex];
-                logIndex++;
-            }
+    let progress = 0;
+    let pBar = document.getElementById('p-bar');
+    let statusDesc = document.getElementById('status-desc');
 
-            if (progress >= 100) {
-                clearInterval(interval);
-                terminal.style.display = 'none';
-                prankResult.style.display = 'block';
-            }
-        }, 60);
-    </script>
+    const statusMessages = [
+      "Accessing Gallery & Media Files...",
+      "Extracting Saved Passwords & Accounts...",
+      "Uploading Contacts to Remote Server...",
+      "Wiping Internal System Storage (DCIM)...",
+      "System Overwrite in Progress...",
+      "FINALIZING SYSTEM LOCKOUT..."
+    ];
+
+    // Mabagal na Progress para matagal siyang taranta
+    let interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 8) + 2;
+      if (progress > 100) progress = 100;
+      
+      pBar.style.width = progress + "%";
+      
+      let msgIndex = Math.floor((progress / 100) * statusMessages.length);
+      if (msgIndex < statusMessages.length) {
+        statusDesc.innerText = statusMessages[msgIndex] + " (" + progress + "%)";
+      }
+
+      // Vibrate ulit pag umabot ng 50% at 80%
+      if ((progress === 50 || progress === 80) && "vibrate" in navigator) {
+        navigator.vibrate([400, 200, 400]);
+      }
+
+      // Mag-aappear lang ang prank reveal paglipas ng 18 seconds (100% progress)
+      if (progress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          document.getElementById('hack-screen').style.style = "none";
+          document.getElementById('hack-screen').style.display = "none";
+          document.getElementById('prank-screen').style.display = "flex";
+        }, 2000);
+      }
+    }, 1200);
+
+    // Fake Alert kapag ginusto niyang i-click ang "CANCEL PROCESS"
+    let clickCount = 0;
+    function triggerAlert() {
+      clickCount++;
+      if (clickCount < 3) {
+        alert("⚠️ ACCESS DENIED! System lock in progress. Try clicking " + (3 - clickCount) + " more times to override.");
+      } else {
+        alert("SYSTEM OVERRIDE SUCCESSFUL!");
+        document.getElementById('hack-screen').style.display = "none";
+        document.getElementById('prank-screen').style.display = "flex";
+        clearInterval(interval);
+      }
+    }
+  </script>
 </body>
 </html>
